@@ -1,0 +1,57 @@
+//Ceasar Cypher
+//Nasr-Kyrillos Kelliny
+
+
+
+import java.io.*;
+ 
+class Problem1
+{
+    public static void main(String args[]) throws IOException
+    {
+       
+        String input;
+          System.out.println("Enter a message");
+            BufferedReader obj = new BufferedReader(new InputStreamReader(System.in));
+            input = obj.readLine();
+                  int length;
+                     length = input.length();
+       
+                  int ch;
+                     System.out.println("enter 1 to continue");
+                       ch = Integer.parseInt(obj.readLine());
+        
+                  int temp, i;
+                     char curr_char;
+                     String output="";
+                     if(ch==1)
+        {
+                     for(i=0;i<length;i++)
+            {
+                        curr_char = input.charAt(i);
+                 
+                     if(Character.isLowerCase(curr_char))
+                {
+                        curr_char = (char) ((int) curr_char - 97);
+                        output = output + (char) ((curr_char + 3)%26+97);
+                }
+                     else if(Character.isUpperCase(curr_char))
+                {
+                    curr_char = (char) ((int) curr_char - 65);
+                    output = output + (char) ((curr_char + 3)%26+65);
+                }
+                else
+                {
+                    output = output + (char) (curr_char);
+                }
+                 
+            }
+            System.out.println("Encrypted text: "+output);
+        }
+                        
+           
+        }
+        
+        
+         
+    }
